@@ -1,11 +1,15 @@
 # Assignment 1: Text Processing with Python
-# This program reads in an input file (data/data.csv) that contains employee information, processes the text to be more standardized, creates an object for each person with corrections from the user, and displays the updated information of each person.
+# This program:
+#   - reads in an input file (data/data.csv) that contains employee information
+#   - processes the text to a more standardized format
+#   - creates an object for each person with format corrections from the user
+#   - displays the updated information of each person
 
 import sys, os, csv, re, pickle
 
 # if sysarg does not include relative path of input file, prints error message and ends program
 if len(sys.argv) < 2:
-        print("Error: Please enter the relative path of the input file as a system arg")
+        print("Please enter the relative path of the input file as a system arg")
         exit(1)
 
 # Person class for employee data from input file fields (last, first, mi, id, phone)
@@ -76,11 +80,12 @@ def process_text(persons):
                 print("ID is two letters followed by 4 digits")
                 id = input("Please enter a valid ID: ")
                 # checks for duplicate ID and prints error message if ID already exists in input file
-                #if id in persons.keys():
-                    #print("Person with ID ", id, " already exists in file")
+                while id in persons.keys():
+                    print("ID", id, "already exists in file")
+                    id = input("Please enter a valid ID: ")
 
             # modifies phone number to be in form 999-999-9999
-            while re.match('\w{3}-\w{3}-\w{4}', phone) is None:
+            while re.match('\d{3}-\d{3}-\d{4}', phone) is None:
                 print("Phone", phone, "is invalid")
                 print("Enter phone number in form 123-456-7890")
                 phone = input("Enter phone number: ")
@@ -88,9 +93,9 @@ def process_text(persons):
             # creates Person object
             person = Person(last, first, mi, id, phone)
             
-            # saves object to a dict of persons, where id is the key
+            # saves object to a dict of persons, where ID is the key
             persons[id] = person
-    
+            
     # returns dict of persons to main function
     return persons
 
