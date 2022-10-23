@@ -21,7 +21,7 @@ Through this project, I learned how to work with regular expressions to process 
 
 
 ## Natural Language Toolkit (NLTK)
-[This Python notebook](2_NLTK/exploring_NLTK.pdf) explores how NLTK interfaces in Python can be used to work with human language data by performing NLP functions such as text processing through tokenization, stemming and lemmatization.
+[This Python notebook](2_NLTK/exploring_NLTK.pdf) explores how NLTK interfaces in Python can be used to work with human language data by performing NLP functions such as text processing through tokenization, stemming, and lemmatization.
 
 
 ## Word Guessing Game
