@@ -1,9 +1,9 @@
 # Assignment 5: N-grams
 # Program 2
 # This program:
-#   - uses test data from the file "LangId.test" to calculate probabilities for each language, for each line in the file
-#   - compares each probability against true labels from the solution file "LangId.sol"
-#   - displays each line number from the test file next to the language with the highest probability for that line in a new file called "guessed_solution.txt"
+#   - uses test data from the file 'LangId.test' to calculate probabilities for each language, for each line in the file
+#   - compares each probability against true labels from the solution file 'LangId.sol'
+#   - displays each line number from the test file next to the language with the highest probability for that line in a new file called 'guessed_solution.txt'
 #   - outputs the accuracy of language items as a percentage of correctly classified instances in the test set based on the guessed count
 #   - outputs the line numbers of incorrectly classified items
 
@@ -72,7 +72,7 @@ def main():
     # stores line numbers of incorrect language items into list
     incorrect_items = []
     
-    # compares correct solution in file "LangId.sol" to guessed solution in file "guessed_solution.txt"
+    # compares correct solution in file 'LangId.sol' to guessed solution in file 'guessed_solution.txt'
     for i in range(guessed_count):
         if guessed_solution[i] == solution_file[i]:
             correct_items_count += 1
